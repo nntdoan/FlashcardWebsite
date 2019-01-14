@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<title>Study a set|Flaskweb</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_flaskweb.css') }}'>
+<div class=page>
+    <h1>Session #{{num}}</h1>
+    <div class=metanav>
+
+    <form id='study_set_flaskweb' method='post'  >
+        {% for a, b in definition_flaskweb %}
+        <p><strong>Definition:</strong> {{ a }} </p>
+        <p><strong>Your answer:</strong></p>
+        <input type='text' name='{{ a }}_answer'/><br>
+        {% endfor %}
+
+    <p>
+    <input type='submit' value='Check Answers' />
+    </p>
+    </form>
+
+    </div>
+</div>

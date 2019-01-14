@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<title>Results|Flaskweb</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_flaskweb.css')}}'>
+<div class=page>
+  <h1>Results</h1>
+  <div class=metanav>
+    <h4>
+      Here are your results:
+    </h4>
+        <p>It took {{num}} tries to complete the set</p><br>
+
+    <form method = 'POST'>
+      <h2>I want to:</h2>
+        <a href="{{ url_for('welcome_flaskweb') }}">
+        <input type='button' value="Return to main menu">
+        </a>
+
+        <a href="{{ url_for('create_set_flaskweb') }}">
+        <input type='button' value="Create new study set">
+        </a>
+
+        <a href="{{ url_for('sets_list_flaskweb') }}">
+        <input type='button' value='Study another set'>
+        </a>
+
+
+    </form>
+  </div>
+</div>

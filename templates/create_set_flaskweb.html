@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create a new study set | Flaskweb</title>
+</head>
+
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_flaskweb.css')}}'>
+<div class=page>
+  <h1>Create a new study set</h1>
+  <div class=metanav>
+
+<form id='create_set_flaskweb' method='POST' > <!-- action is the URL to move to next-->
+  Title: <input type='text' name='title' value="{{request.form.title}}"/>
+
+   <div class="row">
+       <div class="column">
+            <h4>Term</h4>
+            <input type='text' name='term1' value="{{request.form.term1}}"/>
+            <h4>Term</h4>
+            <input type='text' name='term2' value="{{request.form.term2}}"/>
+            <h4>Term</h4>
+            <input type='text' name='term3' value="{{request.form.term3}}"/>
+            <h4>Term</h4>
+            <input type='text' name='term4' value="{{request.form.term4}}"/>
+            <h4>Term</h4>
+            <input type='text' name='term5' value="{{request.form.term5}}"/>
+
+       </div>
+
+       <div class="column">
+            <h4>Definition</h4>
+            <input type='text' name='def1' value="{{request.form.def1}}"/>
+            <h4>Definition</h4>
+            <input type='text' name='def2' value="{{request.form.def2}}"/>
+            <h4>Definition</h4>
+            <input type='text' name='def3' value="{{request.form.def3}}"/>
+            <h4>Definition</h4>
+            <input type='text' name='def4' value="{{request.form.def4}}"/>
+            <h4>Definition</h4>
+            <input type='text' name='def5' value="{{request.form.def5}}"/>
+       </div>
+   </div>
+
+   {% if error %}
+    <p class=error><strong>Warming!</strong> {{ error }}
+   {% endif %}
+   <p>
+   <input type='submit' value='Save' /> <!--the 'value' is the word that will appear on button.-->
+   </p>
+</form>
+
+   </div>
+</div>
+</html>

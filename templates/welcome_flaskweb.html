@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome|Flaskweb</title>
+</head>
+
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_flaskweb.css')}}'>
+
+
+<div class=page>
+  <h1>Welcome to FlaskWeb!</h1>
+    <div class=metanav>
+        {% extends "flashing_layout_flaskweb.html" %}
+        {% block body %}
+    <p>Quote of the day:</p>
+        <blockquote cite="https://www.goodreads.com/quotes/tag/study?page=2">
+            {{quote_of_the_day}}
+        </blockquote>
+
+<form method = 'POST'>
+    <h2>I want to:</h2>
+        <a href="{{ url_for('create_set_flaskweb') }}">
+        <input type='button' value="Create new study set">
+        </a>
+
+        <a href="{{ url_for('sets_list_flaskweb') }}">
+        <input type='button' value='Study an existing set'>
+        </a>
+
+</form>
+        {% endblock %}
+
+    </div>
+</div>
+</html>
+<!-- Reference: https://stackoverflow.com/questions/11124940/creating-link-to-an-url-of-flask-app-in-jinja2-template -->

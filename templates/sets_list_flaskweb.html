@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sets list|Flaskweb</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_flaskweb.css')}}'>
+</head>
+
+<body>
+<div class=page>
+  <h1>Study a set </h1>
+    <div class=metanav>
+        <form id='sets_list_flaskweb' method = 'POST'>
+            Search: <input type='text' name='key_word' value="{{request.form.key_word}}"/> <br>
+            {% extends "flashing_layout_flaskweb.html" %}
+
+            {% block body %}
+            {% if search_result %}
+                {% for item in search_result %}
+                <p> {{ item }}  <a href="{{ url_for( 'study_set_flaskweb', title=item ) }}"><input type="button" value="Study"></a></p>
+                {% endfor %}
+            {% endif %}
+
+            <h4> Your current sets: </h4>
+            {% if set_list %}
+                {% for item in set_list %}
+                <p> {{ item }}  <a href="{{ url_for( 'study_set_flaskweb', title=item ) }}"><input type="button" value="Study"></a></p>
+                {% endfor %}
+
+            {% else %}
+                    <p>
+                    There is no available set. Create one:
+                        <a href="{{ url_for('create_set_flaskweb') }}">
+                        <input type='button' value="Create new study set">
+                        </a>
+                    </p>
+            {% endif %}
+            {% endblock %}
+
+        </form>
+
+    </div>
+</div>
+</body>
+
+</html>
+
+<!--References:
+https://stackoverflow.com/questions/12655155/jinja2-for-loop-with-conditions
+http://flask.pocoo.org/docs/1.0/templating/#context-processors -->
