@@ -60,6 +60,12 @@ For example:
 ```
 $ C:\User\<name> C:\python\python.exe C:\Users\<name>\python\StudyingWeb-withFlask-master\application_flaskweb.py
 ```
+Another solution for flask ver. 1.0.2:
+"You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" -josechval(https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
+
+If this still doesn't work, another solution is to downgrade flask to version 0.12.2
+-Domanic(https://github.com/plotly/dash/issues/257#issuecomment-391187891) <br />
+
 ## REFERENCE
 Flask documentations: http://flask.pocoo.org/docs/1.0/ <br />
 Jinja documentations: http://jinja.pocoo.org/docs/2.10/ <br />
