@@ -160,7 +160,7 @@ def study_set_flaskweb(title=None):
         for a, b in definitions.items():
             if a in incorrect:
                 retry[a] = b
-            if a in correct:
+            if a in correct: 
                 already_correct[a] = b
         flash(f'The following questions were incorrect: {incorrect_format}')
         if len(incorrect) == 0:
