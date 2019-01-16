@@ -63,6 +63,7 @@ def welcome_flaskweb():
     # Create a randomly-chosen quote will appear on the welcome page
     list_quotes = []
     with open('quotes_flaskweb.txt', 'rb') as f:
+        # Fix utf8 error: https://github.com/llSourcell/tensorflow_chatbot/issues/17
         lines = [l.decode('utf8', 'ignore') for l in f.readlines()]
         for line in lines:
             line = line.replace('\n', '')
