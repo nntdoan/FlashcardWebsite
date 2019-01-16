@@ -48,23 +48,36 @@ python3 -m venv venv
 ├── requirements.txt
 ```
 
-2. Depending on which IDE you are using, you may need to configure your app intepreter, as well as a virtual environment as instructed above. Also make sure to install all of the required libraries. <br />
-
-3. Open the application_flaskweb.py in your IDE to run the code as you normally would. The app will run from local host (http://127.0.0.1:5000/) without having to run a seperate server. <br />
-
-**Note for Spyder user**: Since it seems that Spyder does not keep up with the newest version of Flask (1.0.2), the app needs to be run from command prompt. This can be done by: 
+2. If needed, configure your app intepreter, as well as a virtual environment as instructed above. Also make sure to install all of the required libraries, most importantly Flask. <br />
 ```
-$ (source) {{ directory to your python.exe }} {{ directory to the application_flaskweb.py }}
+pip install flask
+```
+
+3. Run the application_flaskweb.py from your command prompt (cmd) (typing 'cmd' in your operating system search) as below. Once the app is running, open your web browser and type in the local host (normally is http://127.0.0.1:5000/) <br />
+```
+(source) {{ directory to your python.exe }} {{ directory to the application_flaskweb.py }}
 ```
 For example:
 ```
-$ C:\User\<name> C:\python\python.exe C:\Users\<name>\python\StudyingWeb-withFlask-master\application_flaskweb.py
+C:\User\Admin C:\python\python.exe C:\Users\Admin\python\StudyingWeb-withFlask-master\application_flaskweb.py
 ```
-Still, the "quote of the day" on Welcome page will not run properly using this way, so delete that part inside the welcome_page function inside application_flaskweb.py. Save this change and using command prompt to run the app.
+![cmd_run](images/cmd.png)
 
-A better solution for flask ver. 1.0.2: "You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" -josechval (https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
+Alternatively, you can open the application_flaskweb.py on your Python interpreter and run it as you normally would. The testing period shows that the app should run flawlessly on PyCharm, but for Spyder with Anaconda, there are few things need taking care of. <br />
+
+**Note for Spyder and Anaconda users:** <br />
+Since it seems that Spyder does not keep up with the newest version of Flask (1.0.2), the app needs to be run from command prompt. Still, the "quote of the day" on Welcome page will not run properly using this way, so delete that part inside the welcome_page function inside application_flaskweb.py. Save this change and using command prompt to run the app. <br />
+
+A better solution will be: "You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" -josechval (https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
 
 If this still doesn't work, another solution is to downgrade flask to version 0.12.2 - Domanic (https://github.com/plotly/dash/issues/257#issuecomment-391187891) <br />
+
+**Other important note:** <br />
+An error "OSError: [Errno 48] Address already in use" or "socket.error: [Errno 48] Address already in use" may arise using cmd, if a connection using the same command for a website was previously opened. <br />
+"To prevent this from happening in the first place, simply **press Ctrl+C** to quit in terminal while SimpleHTTPServer is still running normally." - Mark Chapel. Otherwise, you need to "kill" the host in order to allow the app to run. Further on this problem, please check this thread: https://stackoverflow.com/questions/19071512/socket-error-errno-48-address-already-in-use/19071568#19071568. <br />
+Generally, avoid editing while running the app, quit the local host once you are done with running one instance of web app. 
+
+![cmd_run](images/cmd2.png)
 
 ## REFERENCE
 Flask documentations: http://flask.pocoo.org/docs/1.0/ <br />
