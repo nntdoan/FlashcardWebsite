@@ -52,7 +52,7 @@ python3 -m venv venv
 
 3. Open the application_flaskweb.py in your IDE to run the code as you normally would. The app will run from local host (http://127.0.0.1:5000/) without having to run a seperate server. <br />
 
-Note for Spyder user: After testing our Flask app on several IDE, we have come to the conclusion that if you are using Spyder, the app needs to be run from command prompt. This can be done by: 
+**Note for Spyder user**: Since it seems that Spyder does not keep up with the newest version of Flask (1.0.2), the app needs to be run from command prompt. This can be done by: 
 ```
 $ (source) {{ directory to your python.exe }} {{ directory to the application_flaskweb.py }}
 ```
@@ -60,11 +60,11 @@ For example:
 ```
 $ C:\User\<name> C:\python\python.exe C:\Users\<name>\python\StudyingWeb-withFlask-master\application_flaskweb.py
 ```
-Another solution for flask ver. 1.0.2:
-"You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" -josechval(https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
+Still, the "quote of the day" on Welcome page will not run properly using this way, so delete that part inside the welcome_page function inside application_flaskweb.py. Save this change and using command prompt to run the app.
 
-If this still doesn't work, another solution is to downgrade flask to version 0.12.2
--Domanic(https://github.com/plotly/dash/issues/257#issuecomment-391187891) <br />
+A better solution for flask ver. 1.0.2: "You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" -josechval (https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
+
+If this still doesn't work, another solution is to downgrade flask to version 0.12.2 - Domanic (https://github.com/plotly/dash/issues/257#issuecomment-391187891) <br />
 
 ## REFERENCE
 Flask documentations: http://flask.pocoo.org/docs/1.0/ <br />
