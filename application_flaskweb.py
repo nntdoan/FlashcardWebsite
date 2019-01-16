@@ -8,7 +8,7 @@ import json
 import os
 
 
-# SUPPORT PART
+# SUPPORT PART ####################################################
 ###################################################################
 def filter_file(files_list, key_words='studyset_', extension='.txt', erase_key_word=True):
     """ :param files_list: a list of file names
@@ -44,7 +44,7 @@ def has_illegal_char(t):
     return False
 ###################################################################
 
-# MAIN APP
+# MAIN APP ########################################################
 ###################################################################
 
 
@@ -62,8 +62,9 @@ def to_welcome_page():
 def welcome_flaskweb():
     # Create a randomly-chosen quote will appear on the welcome page
     list_quotes = []
-    with open('quotes_flaskweb.txt', 'r') as f:
-        for line in f:
+    with open('quotes_flaskweb.txt', 'rb') as f:
+        lines = [l.decode('utf8', 'ignore') for l in f.readlines()]
+        for line in lines:
             line = line.replace('\n', '')
             list_quotes.append(line)
         quote_of_the_day = choice(list_quotes)
