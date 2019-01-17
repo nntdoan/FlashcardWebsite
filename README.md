@@ -68,9 +68,11 @@ Alternatively, you can open the application_flaskweb.py on your Python interpret
 **Note for Spyder and Anaconda users:** <br />
 Since it seems that Spyder does not keep up with the newest version of Flask (1.0.2), the app needs to be run from command prompt. Still, the "quote of the day" on Welcome page will not run properly using this way, so delete that part inside the welcome_page function inside application_flaskweb.py. Save this change and using command prompt to run the app. <br />
 
-A better solution will be: "You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" -josechval (https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
+A better solution will be: "You need to edit the echo function definition at ../site-packages/click/utils.py. The default value for the file parameter must be sys.stdout instead of None. Do the same for the secho function definition at ../site-packages/click/termui.py" <br />
+-josechval (https://github.com/plotly/dash/issues/257#issuecomment-391185831) <br />
 
-If this still doesn't work, another solution is to downgrade flask to version 0.12.2 - Domanic (https://github.com/plotly/dash/issues/257#issuecomment-391187891) <br />
+If this still doesn't work, another solution is to downgrade flask to version 0.12.2 <br />
+-Domanic (https://github.com/plotly/dash/issues/257#issuecomment-391187891) <br />
 
 **Other important note:** <br />
 An error "OSError: [Errno 48] Address already in use" or "socket.error: [Errno 48] Address already in use" may arise using cmd, if a connection using the same command for a website was previously opened. "To prevent this from happening in the first place, simply **press Ctrl+C** to quit in terminal while SimpleHTTPServer is still running normally." - Mark Chapel. <br />
