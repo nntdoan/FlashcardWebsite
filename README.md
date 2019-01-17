@@ -63,7 +63,7 @@ C:\User\Admin C:\python\python.exe C:\Users\Admin\python\StudyingWeb-withFlask-m
 ```
 ![cmd_run](images/cmd.png)
 
-Alternatively, you can open the application_flaskweb.py on your Python interpreter and run it as you normally would. The testing period shows that the app should run flawlessly on PyCharm, but for Spyder with Anaconda, there are a few things that need taking care of. <br />
+Alternatively, you can open the application_flaskweb.py on your Python interpreter and run it as you normally would. The testing period shows that the app should run flawlessly on PyCharm, but for Spyder with Anaconda, there are a few things that need to be taken care of. <br />
 
 **Note for Spyder and Anaconda users:** <br />
 Since it seems that Spyder does not keep up with the newest version of Flask (1.0.2), the app needs to be run from command prompt. Still, the "quote of the day" on Welcome page will not run properly using this way, so delete that part inside the welcome_page function inside application_flaskweb.py. Save this change and use command prompt to run the app. <br />
