@@ -175,4 +175,4 @@ def study_set_flaskweb(title=None):
 
 
 if __name__ == "__main__":
-    app_flaskweb.run(debug=True)
+    app_flaskweb.run(debug=True, threaded=True)
