@@ -77,6 +77,7 @@ If this still doesn't work, another solution is to downgrade flask to version 0.
 **Other important note:** <br />
 An error "OSError: [Errno 48] Address already in use" or "socket.error: [Errno 48] Address already in use" may arise using cmd, if a connection using the same command for a website was previously opened. "To prevent this from happening in the first place, simply **press Ctrl+C** to quit in terminal while SimpleHTTPServer is still running normally." <br />
 -Mark Chapel. <br />
+
 Otherwise, you need to "kill" the host in order to allow the app to run, or change the default port 5000 to something else (5001 for example) in cmd. Further on this problem, please check: https://stackoverflow.com/questions/19071512/socket-error-errno-48-address-already-in-use/19071568#19071568, and https://stackoverflow.com/questions/48205495/python-how-to-run-multiple-flask-apps-from-same-client-machine <br />  
 
 ![cmd_run](images/cmd2.png)
